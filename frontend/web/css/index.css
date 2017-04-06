@@ -1,0 +1,196 @@
+/* banner style */
+#banner {
+    min-width: 1280px;
+    height: 400px;
+    background: #283854;
+    color: red;
+    padding: 20px 0;
+}
+#banner .banner-center {
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    background: #6F5499;
+    font-size: 40px;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+/* main style */
+#main {
+    min-width: 1280px;
+    background: #ffffff;
+    padding: 40px 0;
+}
+#main .main-center {
+    width: 1280px;
+    margin: 0 auto;
+}
+#main .main-left {
+    width: 900px;
+    background: #ffffff;
+    float: left;
+}
+#main .main-left .title {
+    font-size: 20px;
+    color: #0F0C20;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+#main .main-left .title a {
+    float: right;
+    color: #aaaaaa;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+#main .main-left .title a:hover {
+    color: #12AEE2;
+}
+#main .main-left .title a i {
+    font-size: 10px;
+    color: #aaaaaa;
+}
+#main .main-left .list {
+
+}
+#main .main-left .list li {
+    height: 200px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 20px 0;
+}
+#main .main-left .list li > a {
+    width: 200px;
+    height: 160px;
+    float: left;
+    background: #f5f5f5;
+}
+#main .main-left .list li .msg-title {
+    width: 690px;
+    height: 160px;
+    margin-left: 10px;
+    float: left;
+}
+#main .main-left .list li .msg-title em {
+    display: block;
+    height: 30px;
+    font-size: 20px;
+}
+#main .main-left .list li .msg-title em > a {
+    color: #283854;
+}
+#main .main-left .list li .msg-title em > a:hover {
+    color: #12AEE2;
+}
+#main .main-left .list li .msg-title p {
+    height: 106px;
+    padding: 10px;
+    overflow: hidden;
+    color: #666666;
+}
+#main .main-left .list li .msg-title div {
+    height: 24px;
+    line-height: 24px;
+}
+#main .reading-amount,.reading-comment,.reading-collect {
+    float: left;
+    display: inline-block;
+    margin-left: 10px;
+}
+#main .reading-amount b,.reading-comment b,.reading-collect b {
+    color: #6F5499;
+}
+#main .reading-amount i,.reading-comment i,.reading-collect i {
+    color: #6F5499;
+}
+#main .set-comment,.set-collect {
+    height: 24px;
+    float: right;
+    padding: 0 10px;
+    display: inline-block;
+    background: #6F5499;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+#main .set-comment i,.set-collect i {
+    color: #ffffff;
+}
+#main .set-comment:hover,.set-collect:hover {
+    background: #283854;
+}
+#main .main-right {
+    width: 340px;
+    background: #ffffff;
+    float: left;
+    margin-left: 40px;
+}
+#main .main-right .block {
+    margin-bottom: 40px;
+}
+#main .main-right .block .title {
+    font-size: 20px;
+    color: #0F0C20;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+#main .main-right .block .title a {
+    float: right;
+    color: #aaaaaa;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+#main .main-right .block .title a:hover {
+    color: #12AEE2;
+}
+#main .main-right .block .title a i {
+    font-size: 10px;
+    color: #aaaaaa;
+}
+#main .block .theme-navs {
+    margin-top: 10px;
+}
+#main .block .theme-navs li {
+    display: block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 26px;
+    background: #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+}
+#main .block .theme-navs li:hover {
+    background: #12AEE2;
+}
+#main .block .theme-navs li i {
+    margin-top: 2px;
+    float: right;
+    color: #aaaaaa;
+}
+#main .block .theme-navs li:hover {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #6F5499;
+}
+#main .block .theme-navs li:hover em {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #ffffff;
+}
+#main .block .theme-navs li:hover i {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #ffffff;
+}

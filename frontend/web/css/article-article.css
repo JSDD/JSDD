@@ -1,0 +1,208 @@
+#main {
+    min-width: 1280px;
+    background: #ffffff;
+    padding: 10px 0 30px 0;
+}
+#main .main-center {
+    width: 1280px;
+    margin: 0 auto;
+}
+#main .title {
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+#main .setlike {
+    padding: 10px 0;
+    text-align: right;
+}
+#main .setlike .push-time {
+    float: left;
+    color: #666666;
+}
+#main .setlike div {
+    display: inline-block;
+    line-height: 26px;
+}
+#main .setlike .reading-amount,.reading-comment,.reading-collect {
+    display: inline-block;
+    margin-left: 10px;
+}
+#main .setlike .reading-amount b,.reading-comment b,.reading-collect b {
+    color: #6F5499;
+}
+#main .setlike .reading-amount i,.reading-comment i,.reading-collect i {
+    color: #6F5499;
+}
+#main .setlike .set-comment,.set-collect {
+    height: 24px;
+    float: right;
+    padding: 0 10px;
+    display: inline-block;
+    background: #6F5499;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+#main .setlike .set-comment i,.set-collect i {
+    color: #ffffff;
+}
+#main .setlike .set-comment:hover,.set-collect:hover {
+    background: #283854;
+}
+
+#main .content {
+    padding: 10px 0;
+}
+#main .content .content-title {
+    font-size: 20px;
+    padding: 0 10px;
+    border-left: 4px solid #6F5499;
+}
+#main .content .content-img {
+    width: 1280px;
+    padding: 20px 0;
+    text-align: center;
+}
+#main .content .content-img > img {
+    width: 600px;
+    height: 300px;
+    background: #f5f5f5;
+}
+#main .content .content-img > em {
+    display: block;
+    font-size: 16px;
+    padding: 10px 0;
+    color: #283854;
+}
+#main .content .content-text {
+    width: 1280px;
+}
+#main .content .content-text > p {
+    line-height: 40px;
+    font-size: 18px;
+    padding: 20px 0;
+}
+
+/*comment style*/
+#comment {
+    min-width: 1280px;
+    background: #ffffff;
+    padding: 20px 0;
+}
+#comment .comment-center {
+    width: 1280px;
+    margin: 0 auto;
+}
+#comment .comment-center > .title {
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+#comment .comment-center .list {
+    padding: 20px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+#comment .comment-center .list li {
+
+}
+#comment .comment-center .list li .comment-user {
+    float: left;
+    width: 160px;
+    text-align: center;
+}
+#comment .comment-center .list li .comment-user > img {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    background: #eeeeee;
+    border-radius: 40px;
+}
+#comment .comment-center .list li .comment-user > em {
+    display: block;
+    padding-top: 10px;
+    color: #666666;
+}
+#comment .comment-center .list li .comment-user > .time {
+    color: #cccccc;
+    padding-top: 5px;
+}
+#comment .comment-center .list li .comment-content {
+    float: left;
+    width: 920px;
+    font-size: 16px;
+    line-height: 30px;
+}
+#comment .comment-center .list li .comment-controller {
+    float: left;
+    width: 200px;
+}
+#comment .comment-center .list li .comment-controller .haslike {
+    float: right;
+    padding: 3px 10px;
+    color: #6F5499;
+    font-weight: 800;
+}
+#comment .comment-center .list li .comment-controller .haslike i {
+    color: #6F5499;
+}
+#comment .comment-center .list li .comment-controller .setlike {
+    float: right;
+    padding: 3px 10px;
+    background: #6F5499;
+    border-radius: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+#comment .comment-center .list li .comment-controller .setlike i {
+    color: #ffffff;
+}
+#comment .comment-center .list li .comment-controller .setlike:hover {
+    background: #283854;
+}
+#comment .comment-center .list .comment-comment {
+    width: 920px;
+    margin: 20px 0 20px 160px;
+}
+#comment .comment-center .list .comment-comment .reply {
+    padding: 10px 0;
+}
+#comment .comment-center .list .comment-comment .reply .reply-user {
+    float: left;
+}
+#comment .comment-center .list .comment-comment .reply .reply-user img {
+    background: #eeeeee;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+#comment .comment-center .list .comment-comment .reply .reply-username {
+    float: left;
+    width: 800px;
+    margin-left: 36px;
+    padding: 5px 0;
+    font-size: 16px;
+}
+#comment .comment-center .list .comment-comment .reply .reply-username > i {
+    color: #cccccc;
+}
+#comment .comment-center .list .comment-comment .reply .reply-msg {
+    float: left;
+    width: 800px;
+    margin-left: 20px;
+}
+#comment .comment-center .list .comment-comment .reply .reply-msg > img {
+    float: left;
+    margin-top: 10px;
+}
+#comment .comment-center .list .comment-comment .reply .reply-msg > p {
+    float: left;
+    background: #eeeeee;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 30px;
+}

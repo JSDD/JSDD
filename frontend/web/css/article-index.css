@@ -1,0 +1,98 @@
+/*main style*/
+#main {
+    min-width: 1280px;
+    background: #ffffff;
+    padding: 10px 0 30px 0;
+}
+#main .main-center {
+    width: 1280px;
+    margin: 0 auto;
+}
+#main .main-center .title {
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+#main .main-center .title em {
+    font-size: 20px;
+    color: #0F0C20;
+}
+#main .main-center .title i {
+    font-size: 20px;
+    color: #0F0C20;
+}
+#main .main-center .articles-list {
+
+}
+#main .main-center .articles-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+#main .main-center .articles-list li > a {
+    width: 200px;
+    height: 160px;
+    float: left;
+    background: #f5f5f5;
+}
+.article-info {
+    width: 1080px;
+    height: 160px;
+    float: left;
+}
+.article-info em {
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    font-size: 24px;
+    padding: 0 20px;
+}
+.article-info em > a {
+    color: #283854;
+}
+.article-info em > a:hover {
+    color: #6F5499;
+}
+.article-info p {
+    height: 94px;
+    display: block;
+    font-size: 16px;
+    padding: 10px 30px;
+    color: #666666;
+}
+.article-info .article-attr {
+    height: 26px;
+    padding: 0 20px;
+    text-align: right;
+}
+.article-info .article-attr div {
+    display: inline-block;
+    line-height: 26px;
+}
+.article-attr .reading-amount,.reading-comment,.reading-collect {
+    float: left;
+    display: inline-block;
+    margin-left: 10px;
+}
+.article-attr .reading-amount b,.reading-comment b,.reading-collect b {
+    color: #6F5499;
+}
+.article-attr .reading-amount i,.reading-comment i,.reading-collect i {
+    color: #6F5499;
+}
+.article-attr .set-comment,.set-collect {
+    height: 24px;
+    float: right;
+    padding: 0 10px;
+    display: inline-block;
+    background: #6F5499;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+.article-attr .set-comment i,.set-collect i {
+    color: #ffffff;
+}
+.article-attr .set-comment:hover,.set-collect:hover {
+    background: #283854;
+}

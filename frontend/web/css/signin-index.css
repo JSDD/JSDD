@@ -1,0 +1,87 @@
+/*main style*/
+#main {
+    min-width: 1280px;
+    background: #eeeeee;
+    padding: 10px 0 30px 0;
+}
+#main .main-center {
+    width: 400px;
+    margin: 6% auto;
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+#main .main-center .title {
+    padding: 20px 0;
+    font-size: 20px;
+    text-align: center;
+    background: #283854;
+    border-bottom: 4px solid #6F5499;
+}
+#main .main-center .title a {
+    color: #FFFFFF;
+}
+.signin-form {
+    /*width: 100%;*/
+    padding: 20px 40px;
+}
+.signin-form > div {
+    padding: 10px 0;
+}
+.signin-form > div input {
+    width: 100%;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    color: #666666;
+    padding: 8px 20px;
+    outline: none;
+}
+.signin-form > div button {
+    width: 65%;
+    float: right;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #6F5499;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+.signin-form > div button:hover {
+    background: #283854;
+}
+.signin-form > div a {
+    width: 30%;
+    float: left;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #eeeeee;
+    color: #666666;
+    text-align: center;
+    border: none;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.signin-form > div a:hover {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #FFFFFF;
+    background: #6F5499;
+}
+.confirm-code input {
+    width: 50% !important;
+}
+.confirm-code img {
+    width: 48%;
+    height: 34px;
+}
+.goback-index {
+    text-align: right;
+    padding: 10px 40px 40px 10px;
+}

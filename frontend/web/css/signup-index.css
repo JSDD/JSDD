@@ -1,0 +1,100 @@
+/*main style*/
+#main {
+    min-width: 1280px;
+    background: #FFFFFF;
+    padding: 10px 0 40px 0;
+}
+#main .main-center {
+    width: 1280px;
+    margin: 0 auto;
+}
+#main .main-center .title {
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.signup-form {
+    padding: 40px 0;
+}
+.input-box {
+    padding: 20px 0;
+}
+.input-box > div {
+    width: 10%;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: right;
+    margin-right: 20px;
+    color: #777777;
+}
+.input-box span {
+    padding: 0 10px;
+    color: #aaaaaa;
+    font-size: 16px;
+}
+.input-box .input-text {
+    width: 40%;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    color: #666666;
+    padding: 8px 20px;
+    outline: none;
+}
+.input-box #captcha {
+    width: 29.5%;
+}
+.input-box > img {
+    width: 10%;
+    height: 36px;
+    cursor: pointer;
+}
+.input-box .input-radio {
+
+}
+.input-box > label {
+    margin-right: 10px;
+}
+.input-box select {
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    color: #666666;
+    padding: 8px 20px;
+    outline: none;
+}
+.input-box em {
+    padding: 0 20px 0 10px;
+}
+.input-box button {
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    color: #ffffff;
+    padding: 8px 60px;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.input-box button:first-of-type {
+    background: #6F5499;
+}
+.input-box button:last-of-type {
+    background: #eeeeee;
+    color: #666666;
+}
+.input-box button:hover {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #283854;
+    color: #ffffff;
+}

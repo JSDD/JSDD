@@ -1,0 +1,56 @@
+/*默认字体*/
+@font-face {
+    font-family: MyFont-Bold;
+    src: url("./My-fonts/SourceHanSansCN-Bold.otf");
+}
+@font-face {
+    font-family: MyFont-ExtraLight;
+    src: url("./My-fonts/SourceHanSansCN-ExtraLight.otf");
+}
+@font-face {
+    font-family: MyFont-Heavy;
+    src: url("./My-fonts/SourceHanSansCN-Heavy.otf");
+}
+@font-face {
+    font-family: MyFont-Light;
+    src: url("./My-fonts/SourceHanSansCN-Light.otf");
+}
+@font-face {
+    font-family: MyFont-Medium;
+    src: url("./My-fonts/SourceHanSansCN-Medium.otf");
+}
+@font-face {
+    font-family: MyFont-Normal;
+    src: url("./My-fonts/SourceHanSansCN-Normal.otf");
+}
+@font-face {
+    font-family: MyFont-Regular;
+    src: url("./My-fonts/SourceHanSansCN-Regular.otf");
+}
+
+/*默认style*/
+*{font-family: "MyFont-Regular"; color: #333333;}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:none; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+
+/*自定义 style*/
+body {
+    background: #eeeeee !important;
+}
+.clear {
+    display: block;
+    clear: both;
+}
