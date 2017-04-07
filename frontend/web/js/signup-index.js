@@ -112,24 +112,24 @@ $(function () {
             url:"index.php?r=signup/validate",
             type:"post",
             dataType:"json",
-            async:false,
+            async:true,
             data:requestDB,
             success:function(result){
-                if(result.code == "success"){
-                    alert("注册成功")
-                }
-                else if(result.code == "captchaError"){
+                if(result.code == "captchaError"){
                     $("#captcha-img").siblings("span").html("验证码错误")
                     $("#captcha-img").siblings("span").css("color", "F44D27")
                 }
                 else if(result.code == "insertError"){
                     alert("注册失败")
+                }else{
+                    Tools.BufferBox.hide("注册成功")
+                    setTimeout(function(){
+                        window.location = "index.php?r=signin/index"
+                    }, 1000)
                 }
-            },
-            error:function () {
-                alert("请求失败")
             }
         })
+        Tools.BufferBox.show("正在申请注册···")
     }
 
     /**

@@ -21,6 +21,7 @@ use yii\helpers\Url;
     <script rel="stylesheet" src="<?=Url::to('@web/js/jquery/jquery-1.8.3.min.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/functions.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/signup-index.js')?>"></script>
+    <script rel="stylesheet" src="<?=Url::to('@web/js/tools.js')?>"></script>
 </head>
 <body>
 

@@ -24,10 +24,10 @@ class SignupController extends Controller {
     }
 
     public function actionValidate(){
-        $User = new User();
-        $email    = Yii::$app->request->post("email");
-        $password = Yii::$app->request->post("password");
-        $phone    = Yii::$app->request->post("phone");
+        $User           = new User();
+        $email          = Yii::$app->request->post("email");
+        $password       = Yii::$app->request->post("password");
+        $phone          = Yii::$app->request->post("phone");
         $captchaInput   = Yii::$app->request->post("captcha");
         $captchaSession = Yii::$app->session->get("__captcha/signup/captcha");
 
@@ -36,7 +36,7 @@ class SignupController extends Controller {
             $User->password = md5($password);
             $User->phone    = $phone;
 
-            if($User->save()){
+            if($User->save() == true){
                 return json_encode(["code"=>"success"]);
             }else{
                 return json_encode(["code"=>"insertError"]);
