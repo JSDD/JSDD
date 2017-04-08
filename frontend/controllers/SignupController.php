@@ -1,6 +1,5 @@
 <?php
 namespace frontend\controllers;
-use yii\helpers\Url;
 use yii\web\Controller;
 use common\models\User;
 use Yii;
