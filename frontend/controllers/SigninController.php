@@ -24,10 +24,11 @@ class SigninController extends Controller {
     }
 
     public function actionValidate(){
+        $session        = Yii::$app->session;
         $emailInput     = Yii::$app->request->post("email");
         $passwordInput  = Yii::$app->request->post("password");
         $captchaInput   = Yii::$app->request->post("captcha");
-        $captchaSession = Yii::$app->session->get("__captcha/signin/captcha");
+        $captchaSession = $session->get("__captcha/signin/captcha");
 
         $User           = new User();
         $userInfo       = $User->find()->where(["email"=>$emailInput])->one();
@@ -40,10 +41,14 @@ class SigninController extends Controller {
         if(count($userInfo) < 1){
             return json_encode(["code"=>"notExist"]);
         }
-        if($passwordInput != $passwordData){
+        if(md5($passwordInput) != $passwordData){
             return json_encode(['code'=>"passwordError"]);
         }
-
-        return json_encode(["code"=>"success"]);
+        
+        $session->set("user", ["email" => $emailData]);
+        
+        if($session["user"]["email"]){
+            return json_encode(["code" => "success"]);
+        }
     }
 }
