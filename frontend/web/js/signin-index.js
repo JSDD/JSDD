@@ -15,7 +15,22 @@ $(function () {
             async:false,
             data:sendData,
             success:function (result) {
-                console.log(result)
+                if(result.code == "captchaError"){
+                    $(".signin-form").children("div").children("span").html("")
+                    $("#captcha-img").siblings("span").html("验证码错误")
+                    $("#captcha-img").siblings("span").css("color", "red")
+		        }else if(result.code == "emailError"){
+                    $(".signin-form").children("div").children("span").html("")
+                    $("#email").siblings("span").html("账号不存在")
+                    $("#email").siblings("span").css("color", "red")
+                }else if(result.code == "passwordError"){
+                    $(".signin-form").children("div").children("span").html("")
+		            $("#password").siblings("span").html("密码不正确")
+                    $("#password").siblings("span").css("color", "red")
+                }else if(result.code == "success"){
+                    $(".signin-form").children("div").children("span").html("")
+                    window.location.href = "index.php?r=index/index"
+                }
             }
         })
     })

@@ -36,6 +36,10 @@
     padding: 8px 20px;
     outline: none;
 }
+.signin-form > div span {
+    padding: 0 10px;
+    line-height: 20px;
+}
 .signin-form > div button {
     width: 65%;
     float: right;

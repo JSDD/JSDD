@@ -20,6 +20,7 @@ use yii\helpers\Url;
     <!--js-->
     <script rel="stylesheet" src="<?=Url::to('@web/js/jquery/jquery-1.8.3.min.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/functions.js')?>"></script>
+    <script rel="stylesheet" src="<?=Url::to('@web/js/tools.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/signin-index.js')?>"></script>
 </head>
 <body>
@@ -33,13 +34,16 @@ use yii\helpers\Url;
             <div>
                 <input id="email" type="text" placeholder="电子邮箱">
                 <input id="csrf-token" type="hidden" value="<?=Yii::$app->getRequest()->getCsrfToken()?>">
+                <span></span>
             </div>
             <div>
                 <input id="password" type="password" placeholder="密码">
+                <span></span>
             </div>
             <div class="confirm-code">
                 <input id="captcha" type="text" placeholder="验证码">
                 <img id="captcha-img" src="<?=Url::to(['signin/captcha'])?>" alt="">
+                <span></span>
             </div>
             <div>
                 <a href="<?=Url::to(['signup/index'])?>">注册</a>

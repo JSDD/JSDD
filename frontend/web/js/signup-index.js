@@ -120,7 +120,7 @@ function submit(requestDB) {
             else if(result.code == "insertError"){
                 alert("注册失败")
             }else{
-                Tools.BufferBox.hide("注册成功")
+                Tools.BufferBox.hide("注册成功", 1000)
                 setTimeout(function(){
                     window.location = "index.php?r=signin/index"
                 }, 1000)

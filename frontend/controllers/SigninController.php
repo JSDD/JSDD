@@ -20,6 +20,9 @@ class SigninController extends Controller {
     }
 
     public function actionIndex(){
+        if(Yii::$app->session["user"]["email"]){
+            $this->redirect(["index/index"]);
+        }
         return $this->render("index");
     }
 
@@ -39,7 +42,7 @@ class SigninController extends Controller {
             return json_encode(["code"=>"captchaError"]);
         }
         if(count($userInfo) < 1){
-            return json_encode(["code"=>"notExist"]);
+            return json_encode(["code"=>"emailError"]);
         }
         if(md5($passwordInput) != $passwordData){
             return json_encode(['code'=>"passwordError"]);

@@ -32,13 +32,17 @@ var Tools =
             this.generate(message)
             $("body").prepend(this.html)
         },
-        hide:function(endMsg)
+        hide:function(endMsg, time)
         {
             var boxId = this.boxId
-            $("#"+this.boxId).children("div").children("span").html(endMsg)
-            setTimeout(function(){
+            if(endMsg || time){
+                $("#"+this.boxId).children("div").children("span").html(endMsg)
+                setTimeout(function(){
+                    $("#"+boxId).remove()
+                }, time)
+            }else{
                 $("#"+boxId).remove()
-            }, 1000)
+            }
         },
     },
 
