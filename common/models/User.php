@@ -17,8 +17,8 @@ use Yii;
  * @property string $address
  * @property string $birthday
  * @property string $sex
- * @property string $creat-time
- * @property string $last-time
+ * @property string $creat_time
+ * @property string $last_time
  * @property string $remarks
  * @property string $auth
  * @property string $status
@@ -40,7 +40,7 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             [['phone', 'sex', 'auth', 'status'], 'integer'],
-            [['birthday', 'creat-time', 'last-time'], 'safe'],
+            [['birthday', 'creat_time', 'last_time'], 'safe'],
             [['email', 'password', 'name', 'nikname', 'headimg', 'address', 'remarks'], 'string', 'max' => 255],
             [['email'], 'unique'],
         ];
@@ -62,8 +62,8 @@ class User extends \yii\db\ActiveRecord
             'address' => 'Address',
             'birthday' => 'Birthday',
             'sex' => 'Sex',
-            'creat-time' => 'Creat Time',
-            'last-time' => 'Last Time',
+            'creat_time' => 'Creat Time',
+            'last_time' => 'Last Time',
             'remarks' => 'Remarks',
             'auth' => 'Auth',
             'status' => 'Status',

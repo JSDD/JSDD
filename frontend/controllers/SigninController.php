@@ -34,24 +34,29 @@ class SigninController extends Controller {
         $captchaSession = $session->get("__captcha/signin/captcha");
 
         $User           = new User();
-        $userInfo       = $User->find()->where(["email"=>$emailInput])->one();
-        $emailData      = $userInfo["email"];
-        $passwordData   = $userInfo["password"];
+        $user           = $User->find()->where(["email"=>$emailInput])->one();
+        $emailData      = $user["email"];
+        $passwordData   = $user["password"];
+
 
         if($captchaInput != $captchaSession){
             return json_encode(["code"=>"captchaError"]);
         }
-        if(count($userInfo) < 1){
+        if(count($user) < 1){
             return json_encode(["code"=>"emailError"]);
         }
         if(md5($passwordInput) != $passwordData){
             return json_encode(['code'=>"passwordError"]);
         }
-        
-        $session->set("user", ["email" => $emailData]);
-        
-        if($session["user"]["email"]){
+
+        $user["last_time"] = time();
+        if($user->save()){
+            $session->set("user", ["email" => $emailData]);
             return json_encode(["code" => "success"]);
+        }else{
+            return json_encode(["code" => "signinError"]);
         }
+
+
     }
 }

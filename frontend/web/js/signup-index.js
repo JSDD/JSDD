@@ -116,10 +116,17 @@ function submit(requestDB) {
             if(result.code == "captchaError"){
                 $("#captcha-img").siblings("span").html("验证码错误")
                 $("#captcha-img").siblings("span").css("color", "F44D27")
+                Tools.BufferBox.hide("", 0)
             }
-            else if(result.code == "insertError"){
-                alert("注册失败")
-            }else{
+            else if(result.code == "userExist") {
+                $("#email").siblings("span").html("用户已存在")
+                $("#email").siblings("span").css("color", "F44D27")
+                Tools.BufferBox.hide("", 0)
+            }
+            else if(result.code == "insertError") {
+                Tools.BufferBox.hide("注册失败", 1000)
+            }
+            else{
                 Tools.BufferBox.hide("注册成功", 1000)
                 setTimeout(function(){
                     window.location = "index.php?r=signin/index"

@@ -22,26 +22,32 @@ class SignupController extends Controller {
         return $this->render("index");
     }
 
-    public function actionValidate(){
-        $User           = new User();
-        $email          = Yii::$app->request->post("email");
-        $password       = Yii::$app->request->post("password");
-        $phone          = Yii::$app->request->post("phone");
-        $captchaInput   = Yii::$app->request->post("captcha");
+    public function actionValidate()
+    {
+        $User = new User();
+        $email = Yii::$app->request->post("email");
+        $password = Yii::$app->request->post("password");
+        $phone = Yii::$app->request->post("phone");
+        $captchaInput = Yii::$app->request->post("captcha");
         $captchaSession = Yii::$app->session->get("__captcha/signup/captcha");
 
-        if($captchaSession === $captchaInput){
-            $User->email    = $email;
-            $User->password = md5($password);
-            $User->phone    = $phone;
+        if ($User->find()->where(["email"=>$email])->one()) {
+            return json_encode(["code" => "userExist"]);
+        }
 
-            if($User->save() == true){
-                return json_encode(["code"=>"success"]);
-            }else{
-                return json_encode(["code"=>"insertError"]);
-            }
-        }else{
-            return json_encode(["code"=>"captchaError"]);
+        if ($captchaSession !== $captchaInput) {
+            return json_encode(["code" => "captchaError"]);
+        }
+
+        $User->email      = $email;
+        $User->password   = md5($password);
+        $User->phone      = $phone;
+        $User->creat_time = time();
+
+        if ($User->save() == true) {
+            return json_encode(["code" => "success"]);
+        } else {
+            return json_encode(["code" => "insertError"]);
         }
     }
 }

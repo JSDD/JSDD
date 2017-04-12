@@ -19,7 +19,7 @@ $(function () {
                     $(".signin-form").children("div").children("span").html("")
                     $("#captcha-img").siblings("span").html("验证码错误")
                     $("#captcha-img").siblings("span").css("color", "red")
-		        }else if(result.code == "emailError"){
+                }else if(result.code == "emailError"){
                     $(".signin-form").children("div").children("span").html("")
                     $("#email").siblings("span").html("账号不存在")
                     $("#email").siblings("span").css("color", "red")
