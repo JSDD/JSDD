@@ -12,7 +12,7 @@ use Yii;
  * @property string $phone
  * @property string $password
  * @property string $name
- * @property string $nikname
+ * @property string $nickname
  * @property string $headimg
  * @property string $address
  * @property string $birthday
@@ -41,7 +41,7 @@ class User extends \yii\db\ActiveRecord
         return [
             [['phone', 'sex', 'auth', 'status'], 'integer'],
             [['birthday', 'creat_time', 'last_time'], 'safe'],
-            [['email', 'password', 'name', 'nikname', 'headimg', 'address', 'remarks'], 'string', 'max' => 255],
+            [['email', 'password', 'name', 'nickname', 'headimg', 'address', 'remarks'], 'string', 'max' => 255],
             [['email'], 'unique'],
         ];
     }
@@ -57,7 +57,7 @@ class User extends \yii\db\ActiveRecord
             'phone' => 'Phone',
             'password' => 'Password',
             'name' => 'Name',
-            'nikname' => 'Nikname',
+            'nickname' => 'Nikname',
             'headimg' => 'Headimg',
             'address' => 'Address',
             'birthday' => 'Birthday',

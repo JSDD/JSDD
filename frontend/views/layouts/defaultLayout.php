@@ -33,15 +33,14 @@ foreach ($navList as $key=>$val) {
         </div>
         <div class="control">
             <ul class="navs">
-                <!--<li><a class="nav-active" href="--><?//=Url::to(['index/index'])?><!--">Home</a></li>-->
                 <?=$navHtml?>
             </ul>
             <?php if($user["email"]){?>
             <div class="user-info">
                 <div class="name">
-                    <a href="<?=Url::to(['user/index'])?>"><?=$user["email"]?></a>
+                    <a href="<?=Url::to(['user/index'])?>"><?=$user["nickname"]?$user["nickname"]:$user["email"];?></a>
                 </div>
-                <a href="<?=Url::to(['user/index'])?>"><img src="<?=Url::to('@web/images/head-img-default.png')?>" alt=""></a>
+                <a href="<?=Url::to(['user/index'])?>"><img src="<?=Url::to('@web/images/head-img-default.jpg')?>"></a>
             </div>
             <?php }else{ ?>
             <div class="sign-in">

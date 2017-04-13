@@ -20,7 +20,7 @@ class SigninController extends Controller {
     }
 
     public function actionIndex(){
-        if(Yii::$app->session["user"]["email"]){
+        if(Yii::$app->session["user"]){
             $this->redirect(["index/index"]);
         }
         return $this->render("index");
@@ -32,12 +32,8 @@ class SigninController extends Controller {
         $passwordInput  = Yii::$app->request->post("password");
         $captchaInput   = Yii::$app->request->post("captcha");
         $captchaSession = $session->get("__captcha/signin/captcha");
-
         $User           = new User();
         $user           = $User->find()->where(["email"=>$emailInput])->one();
-        $emailData      = $user["email"];
-        $passwordData   = $user["password"];
-
 
         if($captchaInput != $captchaSession){
             return json_encode(["code"=>"captchaError"]);
@@ -45,18 +41,17 @@ class SigninController extends Controller {
         if(count($user) < 1){
             return json_encode(["code"=>"emailError"]);
         }
-        if(md5($passwordInput) != $passwordData){
+        if(md5($passwordInput) != $user["password"]){
             return json_encode(['code'=>"passwordError"]);
         }
 
         $user["last_time"] = time();
         if($user->save()){
-            $session->set("user", ["email" => $emailData]);
+            $session->set("user", $user->toArray());
             return json_encode(["code" => "success"]);
         }else{
             return json_encode(["code" => "signinError"]);
         }
-
 
     }
 }

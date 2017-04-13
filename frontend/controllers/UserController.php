@@ -7,6 +7,7 @@ class UserController extends Controller {
     public $layout = "defaultLayout";
 
 	public function actionIndex() {
+
         return $this->render("index");
 	}
 }

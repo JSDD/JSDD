@@ -93,7 +93,7 @@
     float: right;
     border-radius: 20px;
     border: 1px solid #6F5499;
-    padding: 4px 20px;
+    padding: 3px 20px;
     color: #ffffff;
     background: #283854;
     outline: none;
@@ -102,7 +102,7 @@
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    background: #6F5499;
+
 }
 #userinfo .userinfo-center .info .detail-info > div > button:hover {
     -webkit-transition: all 0.3s;
@@ -111,8 +111,116 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
     background: #6F5499;
-    padding: 4px 24px;
+    background: #6F5499;
+    padding: 3px 24px;
 }
 #userinfo .userinfo-center .info .detail-info > div > button > i {
     color: #ffffff;
+}
+
+#usernavs {
+    min-width: 1280px;
+    height: 50px;
+    background: #FFFFFF;
+}
+#usernavs .usernavs-center {
+    width: 1280px;
+    margin: 0 auto;
+    /*text-align: center;*/
+    border-bottom: 2px solid #EEEEEE;
+}
+#usernavs .usernavs-center .nav {
+    font-size: 18px;
+    color: #666666;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    /*margin: 0 20px;*/
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#usernavs .usernavs-center .nav:hover {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    /*border-bottom: 5px solid #283854;*/
+}
+#usernavs .usernavs-center .nav > i {
+    color: #666666;
+    padding-right: 10px;
+}
+
+#collect {
+    min-width: 1280px;
+    background: #FFFFFF;
+    padding: 10px 0 40px 0;
+}
+#collect .collect-center {
+    width: 1280px;
+    margin: 0 auto;
+}
+#collect .collect-center .collect {
+    padding: 20px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+#collect .collect-center .collect .img {
+    width: 160px;
+    height: 120px;
+    background: #EEEEEE;
+    float: left;
+}
+#collect .collect-center .collect .msg {
+    width: 900px;
+    height: 120px;
+    float: left;
+}
+#collect .collect-center .collect .msg .title {
+    font-size: 18px;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+}
+#collect .collect-center .collect .msg .title > a {
+    color: #283854;
+}
+#collect .collect-center .collect .msg .content {
+    height: 60px;
+    padding: 0 20px;
+    color: #aaaaaa;
+}
+#collect .collect-center .collect .msg .attr {
+    height: 30px;
+    padding: 0 20px;
+}
+#collect .collect-center .collect .msg .attr > div {
+    float: left;
+    margin-right: 18px;
+    color: #6F5499;
+    margin-top: 10px;
+}
+#collect .collect-center .collect .msg .attr > div > i {
+    color: #6F5499;
+}
+#collect .collect-center .collect .control {
+    width: 220px;
+    height: 120px;
+    float: left;
+}
+#collect .collect-center .collect .control > div {
+    float: right;
+    margin-top: 94px;
+    padding: 2px 14px;
+    margin-left: 5px;
+    background: #6F5499;
+    color: #ffffff;
+    border-radius: 200px;
+    cursor: pointer;
+}
+#collect .collect-center .collect .control > div:hover {
+    background: #283854;
 }

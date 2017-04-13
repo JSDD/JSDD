@@ -40,9 +40,12 @@ class SignupController extends Controller {
         }
 
         $User->email      = $email;
+        $User->nickname   = $email;
         $User->password   = md5($password);
         $User->phone      = $phone;
         $User->creat_time = time();
+        $User->headimg    = "/JSDD/frontend/web/images/temp-img1.jpg";
+        $User->sex        = 0;
 
         if ($User->save() == true) {
             return json_encode(["code" => "success"]);
