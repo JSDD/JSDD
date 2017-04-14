@@ -67,6 +67,7 @@
     border-radius: 15px;
     border: 1px solid #6F5499;
     text-decoration: none;
+    margin-left: 10px;
 }
 #header .control .sign-in .login-btn:hover {
     -webkit-transition: all 0.3s;

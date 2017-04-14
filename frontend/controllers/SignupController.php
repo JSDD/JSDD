@@ -53,4 +53,5 @@ class SignupController extends Controller {
             return json_encode(["code" => "insertError"]);
         }
     }
+
 }

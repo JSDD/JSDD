@@ -22,50 +22,76 @@ $user = Yii::$app->session->get("user");
     <!--js-->
     <script rel="stylesheet" src="<?=Url::to('@web/js/jquery/jquery-1.8.3.min.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/functions.js')?>"></script>
+    <script rel="stylesheet" src="<?=Url::to('@web/js/user-index.js')?>"></script>
 </head>
 <body>
 
 <div id="userinfo">
     <div class="userinfo-center">
         <div class="head-img">
-            <img src="<?=$user["headimg"]?$user["headimg"]:Url::to('@web/images/head-img-default.jpg');?>" alt="">
+            <img src="<?=$user["headimg"]?>" alt="">
         </div>
         <div class="info">
             <div class="base-info">
                 <div><?=$user["nickname"]?$user["nickname"]:$user["email"];?></div>
                 <div><em>电子邮箱 ：</em><?=$user["email"]?></div>
                 <div><em>手机号 ：</em><?=$user["phone"]?></div>
-                <button><i class="glyphicon glyphicon-chevron-left"></i> 更换头像</button>
-                <button><i class="glyphicon glyphicon-log-out"></i> 注销</button>
+                <button class="btn"><i class="glyphicon glyphicon-chevron-left"></i> 更换头像</button>
+                <a class="btn" href="<?=Url::to(['signin/out'])?>"><i class="glyphicon glyphicon-log-out"></i> 注销</a>
             </div>
             <div class="detail-info">
                 <div>
                     <div>真实姓名</div>
-                    <div><?=$user["name"]?$user["name"]:"暂无";?></div>
+                    <div class="edit-input">
+                        <em><?=$user["name"]?$user["name"]:"暂无";?></em>
+                        <input id="name" type="text">
+                    </div>
+                    <i class="clear"></i>
+                </div>
+                <div>
+                    <div>昵称</div>
+                    <div class="edit-input">
+                        <em><?=$user["nickname"]?$user["nickname"]:"暂无";?></em>
+                        <input id="nickname" type="text">
+                    </div>
                     <i class="clear"></i>
                 </div>
                 <div>
                     <div>性别</div>
-                    <div><?=$user["sex"]?"男":"女";?></div>
+                    <div class="edit-input">
+                        <em><?=$user["sex"]?"男":"女";?></em>
+                        <input id="sex" type="text">
+                    </div>
                     <i class="clear"></i>
                 </div>
                 <div>
                     <div>所在地</div>
-                    <div><?=$user["address"]?$user["address"]:"暂无";?></div>
+                    <div class="edit-input">
+                        <em><?=$user["address"]?$user["address"]:"暂无";?></em>
+                        <input id="address" type="text">
+                    </div>
                     <i class="clear"></i>
                 </div>
                 <div>
                     <div>出生日期</div>
-                    <div><?=$user["birthday"]?$user["birthday"]:"暂无";?></div>
+                    <div class="edit-input">
+                        <em><?=$user["birthday"]?$user["birthday"]:"暂无";?></em>
+                        <input id="birthday" type="text">
+                    </div>
                     <i class="clear"></i>
                 </div>
                 <div>
                     <div>备注</div>
-                    <div><?=$user["remarks"]?$user["remarks"]:"暂无";?></div>
+                    <div class="edit-input">
+                        <em><?=$user["remarks"]?$user["remarks"]:"暂无";?></em>
+                        <input id="remarks" type="text">
+                    </div>
                     <i class="clear"></i>
                 </div>
                 <div>
-                    <button><i class="glyphicon glyphicon-pencil"></i> 编辑</button>
+                    <button id="submit-btn"><i class="glyphicon glyphicon-ok"></i> 提交</button>
+                    <button id="cansel-btn"><i class="glyphicon glyphicon-remove"></i> 取消</button>
+                    <button id="edit-btn"><i class="glyphicon glyphicon-pencil"></i> 编辑</button>
                 </div>
             </div>
         </div>

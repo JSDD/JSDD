@@ -54,4 +54,9 @@ class SigninController extends Controller {
         }
 
     }
+
+    public function actionOut(){
+        Yii::$app->session->remove("user");
+        $this->redirect(["index/index"]);
+    }
 }

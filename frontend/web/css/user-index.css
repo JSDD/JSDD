@@ -40,7 +40,7 @@
 #userinfo .userinfo-center .info .base-info > div > em {
     color: #ffffff;
 }
-#userinfo .userinfo-center .info .base-info > button {
+#userinfo .userinfo-center .info .base-info > .btn {
     border-radius: 20px;
     border: 1px solid #6F5499;
     padding: 2px 10px;
@@ -55,7 +55,7 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-#userinfo .userinfo-center .info .base-info > button:hover {
+#userinfo .userinfo-center .info .base-info > .btn:hover {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -64,7 +64,7 @@
     background: #6F5499;
     padding: 2px 14px;
 }
-#userinfo .userinfo-center .info .base-info > button > i {
+#userinfo .userinfo-center .info .base-info > .btn > i {
     color: #ffffff;
 }
 #userinfo .userinfo-center .info .detail-info {
@@ -77,7 +77,7 @@
 #userinfo .userinfo-center .info .detail-info > div > div {
     float: left;
     color: #FFFFFF;
-    line-height: 30px;
+    padding: 4px 0;
     border-bottom: 1px solid #6F5499;
 }
 #userinfo .userinfo-center .info .detail-info > div > div:first-of-type {
@@ -89,7 +89,7 @@
     margin-left: 2%;
 }
 #userinfo .userinfo-center .info .detail-info > div > button {
-    margin: 10px 0;
+    margin: 10px 0 10px 10px;
     float: right;
     border-radius: 20px;
     border: 1px solid #6F5499;
@@ -116,6 +116,20 @@
 }
 #userinfo .userinfo-center .info .detail-info > div > button > i {
     color: #ffffff;
+}
+#userinfo .userinfo-center .info .detail-info > div > div > em {
+    color: #FFFFFF;
+}
+#userinfo .userinfo-center .info .detail-info > div > div > input {
+    height: 20px;
+    width: 100%;
+    padding: 2px 10px;
+    border: none;
+    display: none;
+    background: #283854;
+}
+#userinfo .userinfo-center .info .detail-info > div > #cansel-btn,#submit-btn {
+    display: none;
 }
 
 #usernavs {
