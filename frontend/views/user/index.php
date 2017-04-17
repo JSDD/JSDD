@@ -36,15 +36,17 @@ $user = Yii::$app->session->get("user");
                 <div><?=$user["nickname"]?$user["nickname"]:$user["email"];?></div>
                 <div><em>电子邮箱 ：</em><?=$user["email"]?></div>
                 <div><em>手机号 ：</em><?=$user["phone"]?></div>
-                <button class="btn"><i class="glyphicon glyphicon-chevron-left"></i> 更换头像</button>
-                <a class="btn" href="<?=Url::to(['signin/out'])?>"><i class="glyphicon glyphicon-log-out"></i> 注销</a>
+                <button class="btn"><i class="glyphicon glyphicon-chevron-left"></i> 更新头像</button>
+                <a class="btn" href="<?=Url::to(['signin/out'])?>"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a>
             </div>
             <div class="detail-info">
                 <div>
                     <div>真实姓名</div>
                     <div class="edit-input">
                         <em><?=$user["name"]?$user["name"]:"暂无";?></em>
-                        <input id="name" type="text">
+                        <div class="hide-form">
+                            <input id="name" type="text">
+                        </div>
                     </div>
                     <i class="clear"></i>
                 </div>
@@ -52,7 +54,9 @@ $user = Yii::$app->session->get("user");
                     <div>昵称</div>
                     <div class="edit-input">
                         <em><?=$user["nickname"]?$user["nickname"]:"暂无";?></em>
-                        <input id="nickname" type="text">
+                        <div class="hide-form">
+                            <input id="nickname" type="text">
+                        </div>
                     </div>
                     <i class="clear"></i>
                 </div>
@@ -60,7 +64,12 @@ $user = Yii::$app->session->get("user");
                     <div>性别</div>
                     <div class="edit-input">
                         <em><?=$user["sex"]?"男":"女";?></em>
-                        <input id="sex" type="text">
+                        <div class="hide-form">
+                            <input type="radio" id="woman" name="sex" value="0"/>
+                            <label for="woman">女</label>
+                            <input type="radio" id="man" name="sex" value="1"/>
+                            <label for="man">男</label>
+                        </div>
                     </div>
                     <i class="clear"></i>
                 </div>
@@ -68,7 +77,15 @@ $user = Yii::$app->session->get("user");
                     <div>所在地</div>
                     <div class="edit-input">
                         <em><?=$user["address"]?$user["address"]:"暂无";?></em>
-                        <input id="address" type="text">
+                        <select name="province" id="province">
+                            <option value="">北京市</option>
+                        </select>
+                        <select name="city" id="city">
+                            <option value="">北京市</option>
+                        </select>
+                        <select name="part" id="part">
+                            <option value="">朝阳区</option>
+                        </select>
                     </div>
                     <i class="clear"></i>
                 </div>
@@ -84,7 +101,8 @@ $user = Yii::$app->session->get("user");
                     <div>备注</div>
                     <div class="edit-input">
                         <em><?=$user["remarks"]?$user["remarks"]:"暂无";?></em>
-                        <input id="remarks" type="text">
+                        <!--<input id="remarks" type="text">-->
+                        <!--<textarea id="remarks" cols="50" rows="2"></textarea>-->
                     </div>
                     <i class="clear"></i>
                 </div>

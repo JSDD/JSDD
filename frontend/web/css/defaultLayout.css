@@ -1,10 +1,11 @@
 /* header style */
 #header {
-    min-width: 1280px;
+    width: 100%;
     /*background: #0F0C20;*/
-    background: #283854;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
     /*border-bottom: 6px solid #12AEE2;*/
-    /*border-bottom: 1px solid #6F5499;*/
+    /*border-bottom: 1px solid #aaaaaa;*/
 }
 #header .header-center {
     width: 1280px;
@@ -44,16 +45,16 @@
     -ms-transition:  all 0.3s;
     -o-transition:  all 0.3s;
     transition:  all 0.3s;
-    color: #6F5499;
+    color: #aaaaaa;
 }
 .nav-active {
     color: #ffffff !important;
-    /*background: #6F5499;*/
+    /*background: #aaaaaa;*/
     border-radius: 20px;
-    border: 1px solid #6F5499;
+    border: 1px solid #aaaaaa;
 }
 .nav-active:hover {
-    color: #6F5499 !important;
+    color: #aaaaaa !important;
 }
 #header .control .sign-in {
     float: right;
@@ -65,7 +66,7 @@
     margin-top: 30px;
     padding: 2px 14px;
     border-radius: 15px;
-    border: 1px solid #6F5499;
+    border: 1px solid #aaaaaa;
     text-decoration: none;
     margin-left: 10px;
 }
@@ -75,7 +76,7 @@
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    background: #6F5499;
+    background: #aaaaaa;
 }
 
 #header .control .user-info {
@@ -119,7 +120,7 @@
 }
 #path .path-center ul li a {
     float: left;
-    color: #6F5499;
+    color: #aaaaaa;
     line-height: 20px;
     /*font-weight: 800;*/
 }

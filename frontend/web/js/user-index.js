@@ -3,8 +3,12 @@ $(function () {
     $(document).on("click", "#edit-btn", function () {
         var em    = $(".edit-input em")
         var input = $(".edit-input input")
+        var select = $(".edit-input select")
+        var label  = $(".edit-input label")
         em.hide()
         input.show()
+        select.show()
+        label.show()
 
         for(var i=0; i<em.length; i++){
             if(em.eq(i).html() != "暂无"){
@@ -21,10 +25,14 @@ $(function () {
     })
 
     $(document).on("click", "#cansel-btn", function () {
-        var em    = $(".edit-input em")
-        var input = $(".edit-input input")
+        var em     = $(".edit-input em")
+        var input  = $(".edit-input input")
+        var select = $(".edit-input select")
+        var label  = $(".edit-input label")
         em.show()
         input.hide()
+        select.hide()
+        label.hide()
 
         $("#edit-btn").show()
         $("#submit-btn").hide()
@@ -38,6 +46,7 @@ $(function () {
         var address  = $("#address").val()
         var birthday = $("#birthday").val()
         var remarks  = $("#remarks").val()
+
 
 	})
 })
