@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 
-$user = Yii::$app->session->get("user");
+$user  = Yii::$app->session->get("user");
 ?>
 
 <!doctype html>
@@ -39,79 +39,124 @@ $user = Yii::$app->session->get("user");
                 <button class="btn"><i class="glyphicon glyphicon-chevron-left"></i> 更新头像</button>
                 <a class="btn" href="<?=Url::to(['signin/out'])?>"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a>
             </div>
-            <div class="detail-info">
-                <div>
-                    <div>真实姓名</div>
-                    <div class="edit-input">
-                        <em><?=$user["name"]?$user["name"]:"暂无";?></em>
-                        <div class="hide-form">
-                            <input id="name" type="text">
+            <table class="detail-info">
+                <tr>
+                    <td>
+                        真是姓名
+                    </td>
+                    <td>
+                        <em id="old-name"><?=$user["name"]?$user["name"]:"暂无";?></em>
+                        <div class="hide-input">
+                            <input id="name" name="name" type="text">
                         </div>
-                    </div>
-                    <i class="clear"></i>
-                </div>
-                <div>
-                    <div>昵称</div>
-                    <div class="edit-input">
-                        <em><?=$user["nickname"]?$user["nickname"]:"暂无";?></em>
-                        <div class="hide-form">
-                            <input id="nickname" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        昵称
+                    </td>
+                    <td>
+                        <em id="old-nickname"><?=$user["nickname"]?$user["nickname"]:"暂无";?></em>
+                        <div class="hide-input">
+                            <input id="nickname" name="nickname" type="text">
                         </div>
-                    </div>
-                    <i class="clear"></i>
-                </div>
-                <div>
-                    <div>性别</div>
-                    <div class="edit-input">
-                        <em><?=$user["sex"]?"男":"女";?></em>
-                        <div class="hide-form">
-                            <input type="radio" id="woman" name="sex" value="0"/>
-                            <label for="woman">女</label>
-                            <input type="radio" id="man" name="sex" value="1"/>
-                            <label for="man">男</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        性别
+                    </td>
+                    <td>
+                        <em id="old-sex"><?=$user["sex"]?"男":"女";?></em>
+                        <div class="hide-input">
+                            <label for="woman">
+                                <input id="woman" name="sex" type="radio"> 女
+                            </label>
+                            <label for="man">
+                                <input id="man" name="sex" type="radio"> 男
+                            </label>
                         </div>
-                    </div>
-                    <i class="clear"></i>
-                </div>
-                <div>
-                    <div>所在地</div>
-                    <div class="edit-input">
-                        <em><?=$user["address"]?$user["address"]:"暂无";?></em>
-                        <select name="province" id="province">
-                            <option value="">北京市</option>
-                        </select>
-                        <select name="city" id="city">
-                            <option value="">北京市</option>
-                        </select>
-                        <select name="part" id="part">
-                            <option value="">朝阳区</option>
-                        </select>
-                    </div>
-                    <i class="clear"></i>
-                </div>
-                <div>
-                    <div>出生日期</div>
-                    <div class="edit-input">
-                        <em><?=$user["birthday"]?$user["birthday"]:"暂无";?></em>
-                        <input id="birthday" type="text">
-                    </div>
-                    <i class="clear"></i>
-                </div>
-                <div>
-                    <div>备注</div>
-                    <div class="edit-input">
-                        <em><?=$user["remarks"]?$user["remarks"]:"暂无";?></em>
-                        <!--<input id="remarks" type="text">-->
-                        <!--<textarea id="remarks" cols="50" rows="2"></textarea>-->
-                    </div>
-                    <i class="clear"></i>
-                </div>
-                <div>
-                    <button id="submit-btn"><i class="glyphicon glyphicon-ok"></i> 提交</button>
-                    <button id="cansel-btn"><i class="glyphicon glyphicon-remove"></i> 取消</button>
-                    <button id="edit-btn"><i class="glyphicon glyphicon-pencil"></i> 编辑</button>
-                </div>
-            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        所在地
+                    </td>
+                    <td>
+                        <em id="old-address"><?=$user["address"]?$user["address"]:"暂无";?></em>
+                        <div class="hide-input">
+                            <label for="">
+                                <select name="province" id="province">
+                                    <option value="河北省">河北省</option>
+                                    <option value="北京市">北京市</option>
+                                </select>
+                                省份
+                            </label>
+                            <label for="">
+                                <select name="city" id="city">
+                                    <option value="石家庄">石家庄</option>
+                                    <option value="北京市">北京市</option>
+                                </select>
+                                城市
+                            </label>
+                            <label for="">
+                                <select name="area" id="area">
+                                    <option value="石家庄">栾城改</option>
+                                    <option value="海淀区">海淀区</option>
+                                </select>
+                                地区
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        出生日期
+                    </td>
+                    <td>
+                        <em id="old-birthday"><?=$user["birthday"]?date("Y", $user["birthday"])."-".date("m", $user["birthday"])."-".date("d", $user["birthday"]):"暂无";?></em>
+                        <div class="hide-input">
+                            <label for="year">
+                                <select name="year" id="year">
+                                    <option value="">2017</option>
+                                </select>
+                                年
+                            </label>
+                            <label for="month">
+                                <select name="month" id="month">
+                                    <option value="">12</option>
+                                </select>
+                                月
+                            </label>
+                            <label for="day">
+                                <select name="day" id="day">
+                                    <option value="">25</option>
+                                </select>
+                                日
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        备注
+                    </td>
+                    <td>
+                        <em id="old-remarks"><?=$user["remarks"]?$user["remarks"]:"暂无";?></em>
+                        <div class="hide-input">
+                            <textarea name="remarks" id="remarks" cols="50" rows="2"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button id="submit-btn"><i class="glyphicon glyphicon-ok"></i> 提交</button>
+                        <button id="cansel-btn"><i class="glyphicon glyphicon-remove"></i> 取消</button>
+                        <button id="edit-btn"><i class="glyphicon glyphicon-pencil"></i> 编辑</button>
+                    </td>
+                </tr>
+            </table>
         </div>
         <i class="clear"></i>
     </div>

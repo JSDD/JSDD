@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 use yii\web\Controller;
+use common\models\User;
 use Yii;
 
 class IndexController extends Controller {

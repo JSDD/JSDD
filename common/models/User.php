@@ -15,10 +15,10 @@ use Yii;
  * @property string $nickname
  * @property string $headimg
  * @property string $address
- * @property string $birthday
+ * @property integer $birthday
  * @property string $sex
- * @property string $creat_time
- * @property string $last_time
+ * @property integer $creat_time
+ * @property integer $last_time
  * @property string $remarks
  * @property string $auth
  * @property string $status
@@ -39,9 +39,9 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['phone', 'sex', 'auth', 'status'], 'integer'],
-            [['birthday', 'creat_time', 'last_time'], 'safe'],
+            [['birthday', 'sex', 'creat_time', 'last_time', 'auth', 'status'], 'integer'],
             [['email', 'password', 'name', 'nickname', 'headimg', 'address', 'remarks'], 'string', 'max' => 255],
+            [['phone'], 'string', 'max' => 32],
             [['email'], 'unique'],
         ];
     }
@@ -57,7 +57,7 @@ class User extends \yii\db\ActiveRecord
             'phone' => 'Phone',
             'password' => 'Password',
             'name' => 'Name',
-            'nickname' => 'Nikname',
+            'nickname' => 'Nickname',
             'headimg' => 'Headimg',
             'address' => 'Address',
             'birthday' => 'Birthday',
