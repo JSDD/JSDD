@@ -21,8 +21,11 @@ $user  = Yii::$app->session->get("user");
 
     <!--js-->
     <script rel="stylesheet" src="<?=Url::to('@web/js/jquery/jquery-1.8.3.min.js')?>"></script>
+    <script rel="stylesheet" src="<?=Url::to('@web/js/plugin/address.js')?>"></script>
+    <script rel="stylesheet" src="<?=Url::to('@web/js/plugin/YMDClass.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/functions.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/user-index.js')?>"></script>
+    <script rel="stylesheet" src="<?=Url::to('@web/js/tools.js')?>"></script>
 </head>
 <body>
 
@@ -48,6 +51,8 @@ $user  = Yii::$app->session->get("user");
                         <em id="old-name"><?=$user["name"]?$user["name"]:"暂无";?></em>
                         <div class="hide-input">
                             <input id="name" name="name" type="text">
+                            <input id="id" name="id" type="hidden" value="<?=$user['Id']?>">
+                            <input id="csrfToken" name="csrfToken" type="hidden" value="<?=Yii::$app->request->csrfToken;?>">
                         </div>
                     </td>
                 </tr>
@@ -70,10 +75,10 @@ $user  = Yii::$app->session->get("user");
                         <em id="old-sex"><?=$user["sex"]?"男":"女";?></em>
                         <div class="hide-input">
                             <label for="woman">
-                                <input id="woman" name="sex" type="radio"> 女
+                                <input id="woman" name="sex" type="radio" value="0"> 女
                             </label>
                             <label for="man">
-                                <input id="man" name="sex" type="radio"> 男
+                                <input id="man" name="sex" type="radio" value="1"> 男
                             </label>
                         </div>
                     </td>
@@ -86,25 +91,13 @@ $user  = Yii::$app->session->get("user");
                         <em id="old-address"><?=$user["address"]?$user["address"]:"暂无";?></em>
                         <div class="hide-input">
                             <label for="">
-                                <select name="province" id="province">
-                                    <option value="河北省">河北省</option>
-                                    <option value="北京市">北京市</option>
-                                </select>
-                                省份
+                                省 <select name="province" id="province"></select>
                             </label>
                             <label for="">
-                                <select name="city" id="city">
-                                    <option value="石家庄">石家庄</option>
-                                    <option value="北京市">北京市</option>
-                                </select>
-                                城市
+                                市 <select name="city" id="city"></select>
                             </label>
                             <label for="">
-                                <select name="area" id="area">
-                                    <option value="石家庄">栾城改</option>
-                                    <option value="海淀区">海淀区</option>
-                                </select>
-                                地区
+                                县 <select name="area" id="area"></select>
                             </label>
                         </div>
                     </td>
@@ -117,22 +110,13 @@ $user  = Yii::$app->session->get("user");
                         <em id="old-birthday"><?=$user["birthday"]?date("Y", $user["birthday"])."-".date("m", $user["birthday"])."-".date("d", $user["birthday"]):"暂无";?></em>
                         <div class="hide-input">
                             <label for="year">
-                                <select name="year" id="year">
-                                    <option value="">2017</option>
-                                </select>
-                                年
+                                <select name="year" id="year"></select>
                             </label>
                             <label for="month">
-                                <select name="month" id="month">
-                                    <option value="">12</option>
-                                </select>
-                                月
+                                <select name="month" id="month"></select>
                             </label>
                             <label for="day">
-                                <select name="day" id="day">
-                                    <option value="">25</option>
-                                </select>
-                                日
+                                <select name="day" id="day"></select>
                             </label>
                         </div>
                     </td>
