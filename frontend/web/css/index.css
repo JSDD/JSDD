@@ -2,10 +2,7 @@
 #banner {
     min-width: 1280px;
     height: 500px;
-    background-color: #2B2B2B;
-    /*background-image: url("../images/bg-img.jpg");*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: top center;*/
+    background-color: #330033;
     color: red;
     padding: 20px 0;
 }

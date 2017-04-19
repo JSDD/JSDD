@@ -28,8 +28,7 @@ foreach ($navList as $key=>$val) {
 <div id="header">
     <div class="header-center">
         <div class="logo">
-            LOGO
-            <!--<img width="80px" src="--><?//=Url::to('@web/images/logo.png')?><!--" alt="">-->
+            <img width="80px" src="<?=Url::to('@web/images/logo.png')?>" alt="">
         </div>
         <div class="control">
             <ul class="navs">

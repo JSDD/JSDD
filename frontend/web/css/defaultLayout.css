@@ -20,6 +20,10 @@
     float: left;
     line-height: 80px;
 }
+#header .logo img {
+    width: 40px;
+    margin-top: 13px;
+}
 #header .control {
     width: 80%;
     height: 80px;
