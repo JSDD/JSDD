@@ -1,11 +1,9 @@
 /* header style */
 #header {
     width: 100%;
-    /*background: #0F0C20;*/
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.6);
     position: fixed;
-    /*border-bottom: 6px solid #12AEE2;*/
-    /*border-bottom: 1px solid #aaaaaa;*/
+    z-index: 999;
 }
 #header .header-center {
     width: 1280px;
@@ -40,8 +38,10 @@
 #header .control .navs li a {
     font-size: 16px;
     display: block;
-    padding: 2px 20px;
+    margin: 0 10px;
+    padding: 5px;
     color: #ffffff;
+    letter-spacing: 3px;
 }
 #header .control .navs li a:hover {
     -webkit-transition: all 0.3s;
@@ -49,16 +49,14 @@
     -ms-transition:  all 0.3s;
     -o-transition:  all 0.3s;
     transition:  all 0.3s;
-    color: #aaaaaa;
+    color: #01E4B6;
 }
 .nav-active {
-    color: #ffffff !important;
-    /*background: #aaaaaa;*/
-    border-radius: 20px;
-    border: 1px solid #aaaaaa;
+    color: #01E4B6 !important;
+    border-bottom: 2px solid #01E4B6;
 }
 .nav-active:hover {
-    color: #aaaaaa !important;
+
 }
 #header .control .sign-in {
     float: right;
@@ -66,13 +64,17 @@
 }
 #header .control .sign-in .login-btn {
     float: right;
-    color: #ffffff;
+    color: #01E4B6;
     margin-top: 30px;
     padding: 2px 14px;
-    border-radius: 15px;
-    border: 1px solid #aaaaaa;
+    border: 2px solid #01E4B6;
     text-decoration: none;
     margin-left: 10px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 #header .control .sign-in .login-btn:hover {
     -webkit-transition: all 0.3s;
@@ -80,7 +82,7 @@
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    background: #aaaaaa;
+    padding: 2px 18px;
 }
 
 #header .control .user-info {

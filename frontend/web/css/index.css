@@ -2,7 +2,10 @@
 #banner {
     min-width: 1280px;
     height: 500px;
-    background-color: #330033;
+    /*background-color: #2B2B2B;*/
+    background-image: url("../images/banner-bg.jpg");
+    background-position: center center;
+    background-size: 100%;
     color: red;
     padding: 20px 0;
 }
@@ -89,8 +92,7 @@
     color: #666666;
 }
 #main .main-left .list li .msg-title div {
-    height: 24px;
-    line-height: 24px;
+
 }
 #main .reading-amount,.reading-comment,.reading-collect {
     float: left;
@@ -98,28 +100,36 @@
     margin-left: 10px;
 }
 #main .reading-amount b,.reading-comment b,.reading-collect b {
-    color: #6F5499;
+    color: #01E4B6;
 }
 #main .reading-amount i,.reading-comment i,.reading-collect i {
-    color: #6F5499;
+    color: #01E4B6;
 }
 #main .set-comment,.set-collect {
-    height: 24px;
+    padding: 3px 7px;
     float: right;
-    padding: 0 10px;
     display: inline-block;
-    background: #6F5499;
-    border-radius: 15px;
-    color: #ffffff;
+    color: #01E4B6;
+    border: 2px solid #01E4B6;
     font-size: 12px;
     cursor: pointer;
     margin-left: 6px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 #main .set-comment i,.set-collect i {
-    color: #ffffff;
+    color: #01E4B6;
 }
 #main .set-comment:hover,.set-collect:hover {
-    background: #283854;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    padding: 3px 10px;
 }
 #main .main-right {
     width: 340px;

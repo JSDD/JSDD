@@ -1,27 +1,24 @@
 /*main style*/
 #main {
     min-width: 1280px;
-    background: #eeeeee;
+    background-image: url("../images/banner-bg.jpg");
+    background-position: center center;
     padding: 10px 0 30px 0;
 }
 #main .main-center {
     width: 400px;
     margin: 6% auto;
-    background: #ffffff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 #main .main-center .title {
     padding: 20px 0;
     font-size: 20px;
     text-align: center;
-    background: #283854;
-    border-bottom: 4px solid #6F5499;
+    /*background: #283854;*/
 }
 #main .main-center .title a {
     color: #FFFFFF;
 }
 .signin-form {
-    /*width: 100%;*/
     padding: 20px 40px;
 }
 .signin-form > div {
@@ -30,11 +27,13 @@
 .signin-form > div input {
     width: 100%;
     font-size: 14px;
-    border-radius: 20px;
-    border: 1px solid #cccccc;
+    /*border: 2px solid #01E4B6;*/
+    border: none;
+    ime-mode: disabled;
     color: #666666;
     padding: 8px 20px;
     outline: none;
+    background: #FFFFFF;
 }
 .signin-form > div span {
     padding: 0 10px;
@@ -43,25 +42,36 @@
 .signin-form > div button {
     width: 65%;
     float: right;
+    font-size: 16px;
     padding: 8px 14px;
-    border-radius: 20px;
-    background: #6F5499;
-    color: #ffffff;
-    border: none;
+    background: none;
+    color: #01E4B6;
+    border: 2px solid #01E4B6;
     outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 .signin-form > div button:hover {
-    background: #283854;
+    background: #01E4B6;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 .signin-form > div a {
     width: 30%;
     float: left;
+    font-size: 16px;
     padding: 8px 14px;
-    border-radius: 20px;
-    background: #eeeeee;
-    color: #666666;
+    background: none;
+    color: #01E4B6;
     text-align: center;
-    border: none;
+    border: 2px solid #01E4B6;
     outline: none;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -76,16 +86,19 @@
     -o-transition: all 0.3s;
     transition: all 0.3s;
     color: #FFFFFF;
-    background: #6F5499;
+    background: #01E4B6;
 }
 .confirm-code input {
     width: 50% !important;
 }
 .confirm-code img {
     width: 48%;
-    height: 40px;
+    height: 36px;
 }
 .goback-index {
     text-align: right;
     padding: 10px 40px 40px 10px;
+}
+.goback-index a {
+    color: #01E4B6;
 }

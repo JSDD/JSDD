@@ -29,6 +29,20 @@ $user  = Yii::$app->session->get("user");
 </head>
 <body>
 
+<div id="update-headimg-box">
+    <div class="content">
+        <div class="title">上传头像</div>
+        <div class="form">
+            <input id="update-headimg-input" type="file">
+            <img id="update-headimg-img" src="" alt="">
+        </div>
+        <div class="control">
+            <button id="update-headimg-confirm">确认</button>
+            <button id="update-headimg-cancel">取消</button>
+        </div>
+    </div>
+</div>
+
 <div id="userinfo">
     <div class="userinfo-center">
         <div class="head-img">
@@ -39,7 +53,7 @@ $user  = Yii::$app->session->get("user");
                 <div><?=$user["nickname"]?$user["nickname"]:$user["email"];?></div>
                 <div><em>电子邮箱 ：</em><?=$user["email"]?></div>
                 <div><em>手机号 ：</em><?=$user["phone"]?></div>
-                <button class="btn"><i class="glyphicon glyphicon-chevron-left"></i> 更新头像</button>
+                <button id="headimg-update-btn" class="btn"><i class="glyphicon glyphicon-chevron-left"></i> 更新头像</button>
                 <a class="btn" href="<?=Url::to(['signin/out'])?>"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a>
             </div>
             <table class="detail-info">
@@ -223,6 +237,16 @@ $user  = Yii::$app->session->get("user");
         </div>
     </div>
 </div>
+
+<!-------------------->
+<div class="ge_pic_icon_Infor">
+    <img src="images/moren.jpg"/>
+</div>
+<div class="Infor_file">
+    <input type="file" name="uploadPicture" id="file" value="" title="上传照片" onchange="getPhoto(this)"/>
+</div>
+<!-------------------->
+
 
 </body>
 </html>

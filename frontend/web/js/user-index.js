@@ -78,6 +78,25 @@ $(function () {
 	})
 })
 
+//更新头像
+$(function () {
+    $(document).on("click", "#headimg-update-btn", function () {
+        $("#update-headimg-box").fadeIn(200)
+    })
+    $(document).on("click", "#update-headimg-confirm", function () {
+        var file = $("#update-headimg-input")
+        var imgUrl = null
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            imgUrl = e.target.result;
+        }
+        reader.readAsDataURL(file.files[0])
+
+        creatImg(imgRrl);
+        console.log(imgUrl)
+    })
+})
+
 //functions*************************************************************************************************************
 /**
  * 提交修改信息
@@ -113,4 +132,34 @@ function submit(sendData) {
         }
     })
     Tools.BufferBox.show("正在更新了数据")
+}
+
+
+
+////////////////////////////////////////////
+var imgurl = "";
+function getPhoto(node) {
+    var imgURL = "";
+    try{
+        var file = null;
+        if(node.files && node.files[0] ){
+            file = node.files[0];
+        }else if(node.files && node.files.item(0)) {
+            file = node.files.item(0);
+        }
+        //Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+        try{
+            imgURL =  file.getAsDataURL();
+        }catch(e){
+            imgRUL = window.URL.createObjectURL(file);
+        }
+    }catch(e){
+        if (node.files && node.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                imgURL = e.target.result;
+            };
+            reader.readAsDataURL(node.files[0]);
+        }
+    }
 }

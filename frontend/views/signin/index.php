@@ -28,11 +28,11 @@ use yii\helpers\Url;
 <div id="main">
     <div class="main-center">
         <div class="title">
-            <a href="<?=Url::to(['index/index'])?>">LOGO</a>
+            <!--<a href="--><?//=Url::to(['index/index'])?><!--">LOGO</a>-->
         </div>
         <div class="signin-form">
             <div>
-                <input id="email" type="text" placeholder="电子邮箱">
+                <input id="email" type="text" placeholder="电子邮箱" autocomplete="off">
                 <input id="csrf-token" type="hidden" value="<?=Yii::$app->getRequest()->getCsrfToken()?>">
                 <span></span>
             </div>

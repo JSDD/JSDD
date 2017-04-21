@@ -5,7 +5,7 @@ use common\models\User;
 use Yii;
 
 class SigninController extends Controller {
-    public $layout = false;
+    public $layout = "defaultLayout";
 
     public function actions()
     {
