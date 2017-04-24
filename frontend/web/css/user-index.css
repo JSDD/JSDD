@@ -12,6 +12,8 @@
 }
 #userinfo .userinfo-center .head-img {
     width: 220px;
+    height: 220px;
+    overflow: hidden;
     float: left;
 }
 #userinfo .userinfo-center .head-img > img {
@@ -298,25 +300,34 @@
 }
 #update-headimg-box .content .form {
     padding: 20px 0;
+    text-align: center;
 }
 #update-headimg-box .content .form input {
     background: #EEEEEE;
-    width: 100%;
+    width: 300px;
     padding: 10px;
-    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
 }
 #update-headimg-box .content .form img {
-    width: 200px;
+    width: 300px;
+    height: 300px;
     background: #EEEEEE;
+}
+#update-headimg-box .content .form > div {
+    color: red;
+    font-size: 16px;
+    padding: 5px 0;
 }
 #update-headimg-box .content .control {
     text-align: center;
+    padding-bottom: 20px;
 }
 #update-headimg-box .content .control button {
-    padding: 2px 20px;
     border: 2px solid #01E4B6;
     background: none;
     color: #01E4B6;
     font-size: 16px;
-    /*font-weight: 800;*/
+    width: 145px;
+    line-height: 30px;
 }

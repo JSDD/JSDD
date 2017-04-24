@@ -42,3 +42,23 @@ function bufferBox(msg) {
     $("body").prepend(bufferBoxHtml)
     return "buffer-box"
 }
+
+/**
+ * 获得上传图片的url
+ */
+function getObjectURL(file) {
+    var url = null;
+    // basic
+    if (window.createObjectURL!=undefined) {
+        url = window.createObjectURL(file) ;
+    }
+    // mozilla(firefox)
+    else if (window.URL!=undefined) {
+        url = window.URL.createObjectURL(file) ;
+    }
+    // webkit or chrome
+    else if (window.webkitURL!=undefined) {
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url
+}

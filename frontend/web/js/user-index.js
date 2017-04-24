@@ -80,20 +80,39 @@ $(function () {
 
 //更新头像
 $(function () {
+    //显示上传表单
     $(document).on("click", "#headimg-update-btn", function () {
         $("#update-headimg-box").fadeIn(200)
     })
-    $(document).on("click", "#update-headimg-confirm", function () {
-        var file = $("#update-headimg-input")
-        var imgUrl = null
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            imgUrl = e.target.result;
+    //预览图片
+    $(document).on("change", "#update-headimg-input", function () {
+        var fileObj = $(this)[0].files[0]
+        if(fileObj){
+            $("#update-headimg-img").attr("src", getObjectURL(fileObj))
         }
-        reader.readAsDataURL(file.files[0])
+    })
+    //取消上传
+    $(document).on("click", "#update-headimg-cancel", function () {
+        $("#update-headimg-box").fadeOut(200)
+        $("#update-headimg-img").attr("src", "")
+    })
+    //提交图片
+    $(document).on("click", "#update-headimg-confirm", function () {
+        var file = $("#update-headimg-input")[0].files[0]
+        var csrfToken = $("#csrfToken").val()
+        if(!file){
+            $("#update-headimg-msg").html("请选择上传文件")
+            return
+        }
+        if(file.size >= 100*1024){
+            $("#update-headimg-msg").html("文件大小不能超过100Kb")
+            return
+        }
 
-        creatImg(imgRrl);
-        console.log(imgUrl)
+        var sendData = new FormData()
+        sendData.append("csrfToken", csrfToken)
+        sendData.append("file", file)
+        submitHeadImg(sendData)
     })
 })
 
@@ -134,32 +153,18 @@ function submit(sendData) {
     Tools.BufferBox.show("正在更新了数据")
 }
 
-
-
-////////////////////////////////////////////
-var imgurl = "";
-function getPhoto(node) {
-    var imgURL = "";
-    try{
-        var file = null;
-        if(node.files && node.files[0] ){
-            file = node.files[0];
-        }else if(node.files && node.files.item(0)) {
-            file = node.files.item(0);
+/**
+ * 提交上传的图片
+ */
+function submitHeadImg(sendData) {
+    $.ajax({
+        url : "index.php?r=user/head-img",
+        type : 'post',
+        data : sendData,
+        processData : false,
+        contentType : false,
+        success : function(result) {
+            alert(result)
         }
-        //Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
-        try{
-            imgURL =  file.getAsDataURL();
-        }catch(e){
-            imgRUL = window.URL.createObjectURL(file);
-        }
-    }catch(e){
-        if (node.files && node.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                imgURL = e.target.result;
-            };
-            reader.readAsDataURL(node.files[0]);
-        }
-    }
+    })
 }

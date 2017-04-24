@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 use yii\web\Controller;
 use common\models\User;
+use yii\web\UploadedFile;
 use Yii;
 
 class UserController extends Controller {
@@ -40,5 +41,23 @@ class UserController extends Controller {
         }else{
             return json_encode(["code"=>"success"]);
         }
+    }
+
+    public function actionHeadImg(){
+	    $file        = $_FILES["file"];
+	    $fileType    = $file["type"];
+	    $fileTmpName = $file["tmp_name"];
+	    $userEmail   = Yii::$app->session->get("user")["email"];
+        $savePath    = "../web/images/headimg/".$userEmail.".".explode("/", $fileType)[1];
+
+        $user = User::find($userEmail)->one();
+        $user["headimg"] = "/JSDD/frontend/web/images/headimg/".$userEmail.".".explode("/", $fileType)[1];
+
+        if($user->save()){
+            move_uploaded_file($fileTmpName, $savePath);
+            return json_encode(["code"=>"success"]);
+        }
+
+	    return json_encode(["code"=>"fail"]);
     }
 }

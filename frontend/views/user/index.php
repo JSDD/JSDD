@@ -33,8 +33,9 @@ $user  = Yii::$app->session->get("user");
     <div class="content">
         <div class="title">上传头像</div>
         <div class="form">
-            <input id="update-headimg-input" type="file">
+            <div id="update-headimg-msg"></div>
             <img id="update-headimg-img" src="" alt="">
+            <input id="update-headimg-input" type="file">
         </div>
         <div class="control">
             <button id="update-headimg-confirm">确认</button>
@@ -237,15 +238,6 @@ $user  = Yii::$app->session->get("user");
         </div>
     </div>
 </div>
-
-<!-------------------->
-<div class="ge_pic_icon_Infor">
-    <img src="images/moren.jpg"/>
-</div>
-<div class="Infor_file">
-    <input type="file" name="uploadPicture" id="file" value="" title="上传照片" onchange="getPhoto(this)"/>
-</div>
-<!-------------------->
 
 
 </body>
