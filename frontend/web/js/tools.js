@@ -10,7 +10,7 @@ var Tools =
     BufferBox:
     {
         boxId       :"BufferBox",
-        boxCss      :"position:fixed;width:100%;height:100%;",
+        boxCss      :"position:fixed;width:100%;height:100%;z-index:9999",
         centerBoxCss:"background:#ffffff;width:240px;height:100px;border-radius:10px;overflow:hidden;margin:20% auto;box-shadow:0 5px 20px rgba(0,0,0,0.3)",
         imgCss      :"width:100px;height:100px;",
         msgCss      :"display:inline-block;width:140px;text-align:center;color:#666666;",

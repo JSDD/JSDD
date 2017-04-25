@@ -18,6 +18,7 @@
 }
 #userinfo .userinfo-center .head-img > img {
     width: 220px;
+    height: 220px;
     background: #ffffff;
     box-shadow: 0 0 40px rgba(0,0,0,0.3);
 }

@@ -158,13 +158,22 @@ function submit(sendData) {
  */
 function submitHeadImg(sendData) {
     $.ajax({
-        url : "index.php?r=user/head-img",
+        url : "index.php?r=user/upload-headimg",
         type : 'post',
         data : sendData,
+        dataType: "json",
+        async: true,
         processData : false,
         contentType : false,
         success : function(result) {
-            alert(result)
+            if(result.code == "success"){
+                $("#head-img").attr("src", result.data.url)
+                Tools.BufferBox.hide("修改成功" ,1000)
+                $("#update-headimg-box").fadeOut(200)
+            }else{
+                alert("上传失败")
+            }
         }
     })
+    Tools.BufferBox.show("上传图片...")
 }

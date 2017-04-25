@@ -1,7 +1,6 @@
 <?php
 use yii\helpers\Url;
-
-$user  = Yii::$app->session->get("user");
+$user = Yii::$app->session->get("user");
 ?>
 
 <!doctype html>
@@ -47,7 +46,7 @@ $user  = Yii::$app->session->get("user");
 <div id="userinfo">
     <div class="userinfo-center">
         <div class="head-img">
-            <img src="<?=$user["headimg"]?>" alt="">
+            <img id="head-img" src="<?=Url::to("@web/images/headimg/").$user["headimg"]?>" alt="">
         </div>
         <div class="info">
             <div class="base-info">

@@ -39,7 +39,7 @@ foreach ($navList as $key=>$val) {
                 <div class="name">
                     <a href="<?=Url::to(['user/index'])?>"><?=$user["nickname"]?$user["nickname"]:$user["email"];?></a>
                 </div>
-                <a href="<?=Url::to(['user/index'])?>"><img src="<?=$user['headimg']?>"></a>
+                <a href="<?=Url::to(['user/index'])?>"><img src="<?=Url::to('@web/images/headimg/').$user['headimg']?>"></a>
             </div>
             <?php }else{ ?>
             <div class="sign-in">

@@ -35,29 +35,39 @@ class UserController extends Controller {
 
         if($user->save()){
             $session->set("user", $user->toArray());
-            $returnUser = $user->toArray();
+            $returnUser = $session["user"];
             $returnUser["birthday"] = Yii::$app->request->post("birthday");
             return json_encode(["code"=>"success", "data"=>$returnUser]);
         }else{
-            return json_encode(["code"=>"success"]);
+            return json_encode(["code"=>"fail"]);
         }
     }
 
-    public function actionHeadImg(){
-	    $file        = $_FILES["file"];
-	    $fileType    = $file["type"];
-	    $fileTmpName = $file["tmp_name"];
-	    $userEmail   = Yii::$app->session->get("user")["email"];
-        $savePath    = "../web/images/headimg/".$userEmail.".".explode("/", $fileType)[1];
+    public function actionUploadHeadimg(){
+	    //get data
+        $session = Yii::$app->session;
+        $user    = User::find($session["user"]["Id"])->one();
+        $file    = $_FILES["file"];
+        $email   = $session->get("user")["email"];
+        $date    = date("Y-m-d-h-i-s", time());
 
-        $user = User::find($userEmail)->one();
-        $user["headimg"] = "/JSDD/frontend/web/images/headimg/".$userEmail.".".explode("/", $fileType)[1];
+        //make path
+        $newFileName = $email."-".$date.".".explode("/", $file["type"])[1];
+        $movePath    = "../web/images/headimg/" . $newFileName;
+        $returnPath  = "/JSDD/frontend/web/images/headimg/" . $newFileName;
 
+        //save file name
+        $user["headimg"] = $newFileName;
         if($user->save()){
-            move_uploaded_file($fileTmpName, $savePath);
-            return json_encode(["code"=>"success"]);
+            //delete old file
+            unlink("../web/images/headimg/" . $session["user"]["headimg"]);
+            //save file
+            move_uploaded_file($file["tmp_name"], $movePath);
+            //init session
+            $session->set("user", $user->toArray());
+            return json_encode(["code"=>"success", "data"=>["url"=>$returnPath]]);
+        }else{
+            return json_encode(["code"=>"fail"]);
         }
-
-	    return json_encode(["code"=>"fail"]);
     }
 }
