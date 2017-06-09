@@ -25,18 +25,25 @@ $(function () {
         }else{
             $("#man").attr("checked", true)
         }
+
         if(oldAddress != "暂无"){
             var oldProvince = oldAddress.split("-")[0]
             var oldCity     = oldAddress.split("-")[1]
             var oldArea     = oldAddress.split("-")[2]
             addressInit("province", "city", "area", oldProvince, oldCity, oldArea)
+        }else{
+            addressInit("province", "city", "area")
         }
+
         if(oldBirthday != "暂无"){
             var oldYear  = oldBirthday.split("-")[0]
             var oldMonth = oldBirthday.split("-")[1]
             var oldDay   = oldBirthday.split("-")[2]
             new YMDselect("year", "month", "day", oldYear, oldMonth, oldDay)
+        }else{
+            new YMDselect("year", "month", "day")
         }
+
         if(oldRemarks != "暂无"){
             $("#remarks").val(oldRemarks)
         }

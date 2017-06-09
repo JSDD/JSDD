@@ -31,6 +31,7 @@ class SignupController extends Controller {
         $captchaInput = Yii::$app->request->post("captcha");
         $captchaSession = Yii::$app->session->get("__captcha/signup/captcha");
 
+
         if ($User->find()->where(["email"=>$email])->one()) {
             return json_encode(["code" => "userExist"]);
         }
@@ -44,7 +45,7 @@ class SignupController extends Controller {
         $User->password   = md5($password);
         $User->phone      = $phone;
         $User->creat_time = time();
-        $User->headimg    = "/JSDD/frontend/web/images/temp-img1.jpg";
+        $User->headimg    = "head-img-default.jpg";
         $User->sex        = 0;
 
         if ($User->save() == true) {

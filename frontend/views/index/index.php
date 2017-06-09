@@ -6,6 +6,7 @@ use yii\helpers\Url;
 <!doctype html>
 <html lang="en">
 <head>
+
     <title>JSDD</title>
 
     <meta charset="UTF-8">
@@ -21,6 +22,7 @@ use yii\helpers\Url;
     <!--js-->
     <script rel="stylesheet" src="<?=Url::to('@web/js/jquery/jquery-1.8.3.min.js')?>"></script>
     <script rel="stylesheet" src="<?=Url::to('@web/js/functions.js')?>"></script>
+
 </head>
 <body>
 

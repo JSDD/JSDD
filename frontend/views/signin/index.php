@@ -14,7 +14,7 @@ use yii\helpers\Url;
     <!--css-->
     <link rel="stylesheet" href="<?=Url::to('@web/bootstrap-3.3.7-dist/css/bootstrap.min.css')?>"/>
     <link rel="stylesheet" href="<?=Url::to('@web/css/default.css')?>"/>
-    <link rel="stylesheet" href="<?=Url::to('@web/css/defaultLayout.css')?>"/>
+    <link rel="stylesheet" href="<?=Url::to('@web/css/default_layout.css')?>"/>
     <link rel="stylesheet" href="<?=Url::to('@web/css/signin-index.css')?>"/>
 
     <!--js-->
